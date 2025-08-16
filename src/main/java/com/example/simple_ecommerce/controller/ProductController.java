@@ -18,8 +18,8 @@ public class ProductController {
 
     // Create Products
     @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody ProductRequest request){
-        return new ResponseEntity<>(productService.createProduct(request),HttpStatus.CREATED);
+    public Product createProduct(@RequestBody ProductRequest productRequest){
+        return productService.createProduct(productRequest);
     }
 
     // Fetch Product

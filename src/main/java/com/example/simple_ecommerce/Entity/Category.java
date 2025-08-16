@@ -6,24 +6,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table (name = "product")
-public class Product {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Column(nullable = false, unique = true)
     private String name;
-
-    private String description;
-
-    private double price;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
 }
