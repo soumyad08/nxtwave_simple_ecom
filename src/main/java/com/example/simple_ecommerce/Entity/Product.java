@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Table (name = "product")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     private String name;
@@ -22,8 +22,4 @@ public class Product {
     private String description;
 
     private double price;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
 }
