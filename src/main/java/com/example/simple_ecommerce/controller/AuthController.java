@@ -35,11 +35,11 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody User user){
-        User newDbUser = userRepository.findByUserName(user.getName())
+        User newDbUser = userRepository.findByUserName(user.getUserName())
                 .orElseThrow(() -> new RuntimeException("User Not Found"));
 
         if(passwordEncoder.matches(user.getPassword(), newDbUser.getPassword())){
-            String token = jwtUtil.generateToken(user.getName());
+            String token = jwtUtil.generateToken(user.getUserName());
             return ResponseEntity.ok(token);
         }
         return ResponseEntity.badRequest().body("Invalid Credentials");

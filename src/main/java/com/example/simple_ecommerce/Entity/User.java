@@ -18,7 +18,7 @@ public class User {
     private UUID id;
 
     @Column(nullable = false)
-    private String name;
+    private String userName;
 
     @Column(nullable = false, length = 100)
     private String email;

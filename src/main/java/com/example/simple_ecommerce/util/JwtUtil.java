@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    private final String secretKey = "nxtwave@123";
+    private final String secretKey = "nxtwavegfdkjdiojadsidsakhjasdkjasdkbjdaskjadsdfskjdsfkjdsfjkdfs123";
 
     private final long expTime = 1000 * 60 * 60;
 
